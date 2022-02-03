@@ -1,0 +1,9 @@
+name: ORanks
+author: 0xFFA500
+api-version: 1.18
+version: 1.1
+main: at.orange.oranks.ORanks
+
+commands:
+  oranks:
+    description: "Type /oranks reload to reload the config"

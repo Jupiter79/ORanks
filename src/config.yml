@@ -1,0 +1,36 @@
+# Please use /oranks reload instead of /reload!
+# Valid colors are: AQUA, BLACK, BLUE, DARK_AQUA, DARK_BLUE, DARK_GRAY, DARK_GREEN, DARK_PURPLE, DARK_RED, GOLD, GRAY, GREEN, LIGHT_PURPLE, RED, WHITE, YELLOW
+# DO NOT use ANY other colors because the plugin will probably crash
+
+# Change this to false if you don't want the ranks to show up in chat
+formatChat: true
+
+tagFormat: "%rank% §8¦ "
+
+chatFormat: "%rank% §8¦ §7%player% §8» §7%message%"
+
+# Any color or "AUTO" to use the same color as the rank
+playerChatColor: "AUTO"
+
+playerColor: "GRAY"
+
+# Rank sorting is the same as here (admin is at the top and the defaultRank (Player) is on the bottom)
+# For example: for the owner rank you need to give someone the oranks.owner permission and for premium the oranks.premium permission
+# DO NOT change the name of defaultRank! Everyone who got none of the above ranks, will get the defaultRank
+# Every operator of the server will get the rank at the top
+ranks:
+  - owner:
+      prefix: "Owner"
+      color: "DARK_RED"
+  - admin:
+      prefix: "Admin"
+      color: "RED"
+  - mod:
+      prefix: "Mod"
+      color: "DARK_GREEN"
+  - premium:
+      prefix: "Premium"
+      color: "GOLD"
+  - defaultRank:
+      prefix: "Player"
+      color: "DARK_AQUA"
