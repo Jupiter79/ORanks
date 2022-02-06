@@ -55,7 +55,7 @@ public class ORanks extends JavaPlugin {
         new BukkitRunnable() {
             @Override
             public void run() {
-                ORanks.reloadRanks();
+                ORanks.assignRanks();
             }
         }.runTaskTimer(plugin, 0, 20 * 5);
     }
