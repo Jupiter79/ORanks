@@ -1,6 +1,6 @@
 package at.orange.oranks;
 
-import at.orange.oranks.commands.ORanks_Reload;
+import at.orange.oranks.commands.CmdReload;
 import at.orange.oranks.listeners.FormatChat;
 import at.orange.oranks.listeners.GiveRankOnJoin;
 import at.orange.oranks.other.Rank;
@@ -31,7 +31,7 @@ public class ORanks extends JavaPlugin {
 
         getServer().getConsoleSender().sendMessage("§aORanks v" + getDescription().getVersion() + " has been successfully enabled!");
 
-        getCommand("oranks").setExecutor(new ORanks_Reload());
+        getCommand("oranks").setExecutor(new CmdReload());
 
         getServer().getPluginManager().registerEvents(new GiveRankOnJoin(), this);
         getServer().getPluginManager().registerEvents(new FormatChat(), this);
