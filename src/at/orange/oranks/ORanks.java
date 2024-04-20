@@ -77,7 +77,7 @@ public class ORanks extends JavaPlugin {
 
             String id = rank.getKey();
 
-            RANKS.add(new Rank(current[0], id, rank.getValue().get("prefix"), rank.getValue().get("color")));
+            RANKS.add(new Rank(current[0], id, rank.getValue().get("prefix"), rank.getValue().get("messageFormatting")));
 
             current[0]++;
         });
@@ -85,8 +85,8 @@ public class ORanks extends JavaPlugin {
         RANKS.forEach(rank -> {
             Team team = scoreboard.registerNewTeam(String.valueOf(rank.orderId));
 
-            team.setPrefix(config.getString("tagFormat").replace("%rank%", rank.color + rank.prefix));
-            team.setColor(ChatColor.valueOf(config.getString("playerColor")));
+            System.out.println(config.getString("tagFormat").replace("%rank%", rank.prefix));
+            team.setPrefix(config.getString("tagFormat").replace("%rank%", rank.prefix));
         });
 
         assignRanks();
@@ -97,7 +97,7 @@ public class ORanks extends JavaPlugin {
     }
 
     private static Rank getRankByPlayer(Player p) {
-        if (RANKS.stream().filter(x -> p.hasPermission("oranks." + x.id)).collect(Collectors.toList()).size() > 0) {
+        if (!(RANKS.stream().filter(x -> p.hasPermission("oranks." + x.id)).count() == 0)) {
             return RANKS.stream().filter(x -> p.hasPermission("oranks." + x.id)).findFirst().get();
         } else {
             return RANKS.stream().filter(x -> x.id.equals("defaultRank")).findFirst().get();

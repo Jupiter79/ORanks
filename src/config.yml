@@ -1,6 +1,37 @@
 # Please use /oranks reload instead of /reload!
-# Valid colors are: AQUA, BLACK, BLUE, DARK_AQUA, DARK_BLUE, DARK_GRAY, DARK_GREEN, DARK_PURPLE, DARK_RED, GOLD, GRAY, GREEN, LIGHT_PURPLE, RED, WHITE, YELLOW
-# DO NOT use ANY other colors because the plugin will probably crash
+
+# --- COLORS ---
+# Always use the paragraph formatting of the colors!
+# Dark Red (§4)
+# Red (§c)
+# Gold (§6)
+# Yellow (§e)
+# Dark Green (§2)
+# Green (§a)
+# Aqua (§b)
+# Dark Aqua (§3)
+# Dark Blue (§1)
+# Blue (§9)
+# Light Purple (§d)
+# Dark Purple (§5)
+# White (§f)
+# Gray (§7)
+# Dark Gray (§8)
+# Black (§0)
+
+# Special codes
+# Obfuscated (§k)
+# Bold (§l)
+# Strikethrough (§m)
+# Underline (§n)
+# Italic (§o)
+# Reset (§r)
+
+# --- VARIABLES ---
+# %rank% -> The field 'prefix' of the rank (with the formatting)
+# %player% -> The name of the player
+# %message% -> The raw message, the player sends
+# %world% -> The name of the current world the player is in
 
 # Change this to false if you don't want the ranks to show up in chat
 formatChat: true
@@ -9,28 +40,33 @@ tagFormat: "%rank% §8¦ "
 
 chatFormat: "%rank% §8¦ §7%player% §8» §7%message%"
 
-# Any color or "AUTO" to use the same color as the rank
+# Any formatting or "AUTO" to use the 'messageFormatting' field as the color
 playerChatColor: "AUTO"
 
 playerColor: "GRAY"
 
-# Rank sorting is the same as here (admin is at the top and the defaultRank (Player) is on the bottom)
+# Rank sorting is the same as here (owner is at the top and the defaultRank (Player) is on the bottom)
 # For example: for the owner rank you need to give someone the oranks.owner permission and for premium the oranks.premium permission
 # DO NOT change the name of defaultRank! Everyone who got none of the above ranks, will get the defaultRank
+
 # Every operator of the server will get the rank at the top
+# To prevent this behaviour just set the specific permission to FALSE
+# E.g. a operator on your server shows up as the owner in the tab and you don't want this
+# Just set the permission oranks.owner as FALSE
+
 ranks:
   - owner:
-      prefix: "Owner"
-      color: "DARK_RED"
+      prefix: "§4§lOwner"
+      messageFormatting: "§4§l"
   - admin:
-      prefix: "Admin"
-      color: "RED"
+      prefix: "§cAdmin"
+      messageFormatting: "§c"
   - mod:
-      prefix: "Mod"
-      color: "DARK_GREEN"
+      prefix: "§2Mod"
+      messageFormatting: "§2"
   - premium:
-      prefix: "Premium"
-      color: "GOLD"
+      prefix: "§6Premium"
+      messageFormatting: "§6"
   - defaultRank:
-      prefix: "Player"
-      color: "DARK_AQUA"
+      prefix: "§3Player"
+      messageFormatting: "§3"

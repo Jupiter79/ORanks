@@ -6,12 +6,12 @@ public class Rank {
     public int orderId;
     public String id;
     public String prefix;
-    public ChatColor color;
+    public String messageFormatting;
 
-    public Rank(int orderId, String id, String prefix, String color) {
+    public Rank(int orderId, String id, String prefix, String messageFormatting) {
         this.orderId = orderId;
         this.id = id;
         this.prefix = prefix;
-        this.color = ChatColor.valueOf(color);
+        this.messageFormatting = messageFormatting;
     }
 }

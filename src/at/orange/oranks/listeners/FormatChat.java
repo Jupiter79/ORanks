@@ -15,9 +15,14 @@ public class FormatChat implements Listener {
 
             Rank rank = ORanks.RANKS.stream().filter(x -> String.valueOf(x.orderId).equals(teamName)).findFirst().get();
 
-            ChatColor messageColor = ORanks.config.getString("playerChatColor").equals("AUTO") ? rank.color : ChatColor.valueOf(ORanks.config.getString("playerChatColor"));
+            String messageFormatting = ORanks.config.getString("playerChatColor").equals("AUTO") ? rank.messageFormatting : ORanks.config.getString("playerChatColor");
 
-            e.setFormat(ORanks.config.getString("chatFormat").replace("%rank%", rank.color + rank.prefix).replace("%player%", e.getPlayer().getName()).replace("%message%", messageColor + e.getMessage()));
+            e.setFormat(ORanks.config.getString("chatFormat")
+                    .replace("%rank%", rank.prefix)
+                    .replace("%player%", e.getPlayer().getName())
+                    .replace("%message%", messageFormatting + e.getMessage())
+                    .replace("%world%", e.getPlayer().getWorld().getName())
+            );
         }
     }
 }
