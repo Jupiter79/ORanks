@@ -85,8 +85,8 @@ public class ORanks extends JavaPlugin {
         RANKS.forEach(rank -> {
             Team team = scoreboard.registerNewTeam(String.valueOf(rank.orderId));
 
-            System.out.println(config.getString("tagFormat").replace("%rank%", rank.prefix));
             team.setPrefix(config.getString("tagFormat").replace("%rank%", rank.prefix));
+            team.setColor(ChatColor.valueOf(config.getString("playerColor")));
         });
 
         assignRanks();
